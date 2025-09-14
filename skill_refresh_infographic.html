@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack Developer Skill Refresh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 150px;
+            height: 80px;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            width: 50px;
+        }
+        @media (max-width: 767px) {
+            .flowchart-arrow {
+                transform: rotate(90deg);
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c] mb-4">The 2025 Full-Stack Developer Refresh Guide</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">In the ever-evolving world of technology, staying current is key. This guide visualizes the essential areas modern full-stack developers should focus on to keep their skills sharp, relevant, and in-demand.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <section class="lg:col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">1. Revisit the Core Foundation</h2>
+                <p class="mb-6 text-gray-600">Even for seasoned developers, reinforcing the fundamentals is crucial. Modern web development is built on a solid understanding of HTML, CSS, and JavaScript. This chart represents their equal and interconnected importance.</p>
+                <div class="chart-container h-64 sm:h-72">
+                    <canvas id="coreFundamentalsChart"></canvas>
+                </div>
+            </section>
+
+            <section class="lg:col-span-2 md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">2. Modernize Your Front-End Stack</h2>
+                <p class="mb-6 text-gray-600">The front-end landscape has transformed. Mastering modern frameworks, adopting TypeScript for type safety, and understanding efficient state management are no longer optional—they are the new standard for building robust user interfaces.</p>
+                <div class="chart-container h-64 sm:h-72">
+                    <canvas id="frontendStackChart"></canvas>
+                </div>
+            </section>
+
+            <section class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">4. From Code to Cloud: The DevOps Workflow</h2>
+                <p class="mb-8 text-gray-600">The line between development and operations has blurred. A modern developer must understand the entire deployment lifecycle. This involves containerizing applications, automating builds and tests, and deploying to scalable cloud services.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center w-full">
+                    <div class="flowchart-step bg-[#665191] text-white">
+                        <span class="font-semibold">Containers (Docker)</span>
+                    </div>
+                    <div class="flowchart-arrow text-[#a05195]">➔</div>
+                    <div class="flowchart-step bg-[#a05195] text-white">
+                        <span class="font-semibold">CI/CD (GitHub Actions)</span>
+                    </div>
+                    <div class="flowchart-arrow text-[#d45087]">➔</div>
+                    <div class="flowchart-step bg-[#d45087] text-white">
+                        <span class="font-semibold">Cloud (AWS, GCP, Azure)</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="lg:col-span-2 md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">3. Update Back-End & Database Skills</h2>
+                <p class="mb-6 text-gray-600">The back-end continues to evolve with new tools and best practices. This chart breaks down the essential components of a modern back-end skillset, from server-side logic and API design to database management.</p>
+                <div class="chart-container h-64 sm:h-72">
+                    <canvas id="backendSkillsChart"></canvas>
+                </div>
+            </section>
+
+            <section class="lg:col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">5. The Developer's Craft</h2>
+                <p class="mb-6 text-gray-600">Great developers are defined by more than just code. A commitment to best practices in version control, code quality, testing, and security creates a well-rounded and highly effective professional.</p>
+                 <div class="chart-container h-64 sm:h-72">
+                    <canvas id="bestPracticesChart"></canvas>
+                </div>
+            </section>
+
+            <section class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">6. Putting Knowledge into Practice</h2>
+                <p class="mb-6 text-gray-600">Learning is an active process. The best way to solidify new skills is to apply them. Here are five practical, hands-on methods to effectively refresh your technical abilities and stay ahead of the curve.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-center">
+                    <div class="p-4 bg-gray-50 rounded-lg border border-[#f95d6a]">
+                        <div class="text-4xl mb-2">🚀</div>
+                        <h3 class="font-semibold text-[#d45087]">Build a New Project</h3>
+                        <p class="text-sm text-gray-600">Apply a modern stack from scratch.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg border border-[#ff7c43]">
+                        <div class="text-4xl mb-2">🤝</div>
+                        <h3 class="font-semibold text-[#f95d6a]">Contribute to Open Source</h3>
+                        <p class="text-sm text-gray-600">Collaborate on real-world codebases.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg border border-[#ffa600]">
+                        <div class="text-4xl mb-2">🎓</div>
+                        <h3 class="font-semibold text-[#ff7c43]">Take an Online Course</h3>
+                        <p class="text-sm text-gray-600">Fill knowledge gaps with structured learning.</p>
+                    </div>
+                     <div class="p-4 bg-gray-50 rounded-lg border border-[#a05195]">
+                        <div class="text-4xl mb-2">📚</div>
+                        <h3 class="font-semibold text-[#a05195]">Read Documentation</h3>
+                        <p class="text-sm text-gray-600">Stay current with official sources.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-lg border border-[#665191]">
+                        <div class="text-4xl mb-2">🔧</div>
+                        <h3 class="font-semibold text-[#665191]">Refactor an Existing Project</h3>
+                        <p class="text-sm text-gray-600">Apply modern practices to old code.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">Your Personalized Learning Plan ✨</h2>
+                <p class="mb-4 text-gray-600">Enter your current tech stack or an area you want to improve, and let our AI generate a customized roadmap for you. For example, try typing "I know React but want to learn a new framework" or "Help me get better at Python and data."</p>
+                <div class="flex flex-col md:flex-row gap-4 mb-4">
+                    <textarea id="userInput" rows="2" class="flex-grow p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#665191]"></textarea>
+                    <button id="generateButton" class="bg-[#d45087] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#a05195] transition duration-300 ease-in-out whitespace-nowrap">
+                        Generate Plan ✨
+                    </button>
+                </div>
+                <div id="loading" class="hidden text-center text-gray-500 font-semibold my-4">Generating your plan...</div>
+                <div id="output" class="p-4 rounded-lg bg-gray-50 border border-gray-200 min-h-[100px] text-gray-700">Your personalized plan will appear here.</div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const brilliantBlues = ['#003f5c', '#665191', '#d45087', '#ff7c43', '#ffa600', '#2f4b7c', '#a05195', '#f95d6a'];
+
+            const processLabels = (labels) => {
+                const maxLen = 16;
+                return labels.map(label => {
+                    if (label.length <= maxLen) return label;
+                    const words = label.split(' ');
+                    let lines = [];
+                    let currentLine = '';
+                    for (const word of words) {
+                        if ((currentLine + ' ' + word).trim().length > maxLen) {
+                            lines.push(currentLine.trim());
+                            currentLine = word;
+                        } else {
+                            currentLine = (currentLine + ' ' + word).trim();
+                        }
+                    }
+                    if (currentLine) lines.push(currentLine.trim());
+                    return lines;
+                });
+            };
+
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            new Chart(document.getElementById('coreFundamentalsChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['HTML: Semantics & Accessibility', 'CSS: Modern Layouts', 'JavaScript: ES6+ Features'],
+                    datasets: [{
+                        label: 'Core Fundamentals',
+                        data: [33.3, 33.3, 33.4],
+                        backgroundColor: [brilliantBlues[0], brilliantBlues[1], brilliantBlues[2]],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: { ...tooltipTitleCallback, responsive: true, maintainAspectRatio: false }
+            });
+
+            new Chart(document.getElementById('frontendStackChart'), {
+                type: 'bar',
+                data: {
+                    labels: processLabels(['Modern Frameworks (React, Vue, Angular)', 'TypeScript Adoption', 'Modern State Management']),
+                    datasets: [{
+                        label: 'Importance / Adoption Rate (%)',
+                        data: [95, 90, 85],
+                        backgroundColor: [brilliantBlues[3], brilliantBlues[4], brilliantBlues[5]],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...tooltipTitleCallback,
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { beginAtZero: true, max: 100 }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('backendSkillsChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Modern Back-End Skillset'],
+                    datasets: [
+                        { label: 'Server-Side Languages', data: [40], backgroundColor: brilliantBlues[0] },
+                        { label: 'API Development (REST/GraphQL)', data: [35], backgroundColor: brilliantBlues[6] },
+                        { label: 'Databases (SQL/NoSQL)', data: [25], backgroundColor: brilliantBlues[7] }
+                    ]
+                },
+                options: {
+                    ...tooltipTitleCallback,
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { stacked: true },
+                        y: { stacked: true }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('bestPracticesChart'), {
+                type: 'radar',
+                data: {
+                    labels: processLabels(['Version Control (Advanced Git)', 'Code Quality & Linting', 'Automated Testing', 'Web Security Principles']),
+                    datasets: [{
+                        label: 'Skill Proficiency',
+                        data: [90, 85, 80, 88],
+                        backgroundColor: 'rgba(102, 81, 145, 0.2)',
+                        borderColor: brilliantBlues[1],
+                        pointBackgroundColor: brilliantBlues[1],
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: brilliantBlues[1]
+                    }]
+                },
+                options: {
+                    ...tooltipTitleCallback,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                     scales: {
+                        r: {
+                            angleLines: { display: false },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+
+            const userInput = document.getElementById('userInput');
+            const generateButton = document.getElementById('generateButton');
+            const loadingIndicator = document.getElementById('loading');
+            const outputDiv = document.getElementById('output');
+            
+            console.log('API call logic initialized.');
+
+            generateButton.addEventListener('click', async () => {
+                const userQuery = userInput.value.trim();
+                if (!userQuery) {
+                    outputDiv.innerHTML = "Please enter some text to generate a plan.";
+                    return;
+                }
+                
+                outputDiv.innerHTML = '';
+                loadingIndicator.classList.remove('hidden');
+
+                try {
+                    const systemPrompt = "You are an expert career coach and tech mentor. Your task is to provide a structured, actionable, and encouraging learning roadmap for a full-stack developer based on their input. The plan should be concise, professional, and contain a greeting, a summary, a multi-step plan, and a concluding remark encouraging the user. Use markdown formatting for clarity (e.g., bold headings, bullet points).";
+                    const fullQuery = `Generate a learning plan based on this user's request: ${userQuery}. The plan should focus on modern full-stack development skills.`;
+                    
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                    const payload = {
+                        contents: [{ parts: [{ text: fullQuery }] }],
+                        tools: [{ "google_search": {} }],
+                        systemInstruction: {
+                            parts: [{ text: systemPrompt }]
+                        },
+                    };
+
+                    let response = null;
+                    let retries = 0;
+                    const maxRetries = 3;
+                    while (retries < maxRetries) {
+                        try {
+                            response = await fetch(apiUrl, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload)
+                            });
+                            if (response.status !== 429) break;
+                        } catch (e) {
+                            if (retries === maxRetries - 1) throw e;
+                        }
+                        retries++;
+                        await new Promise(resolve => setTimeout(resolve, Math.pow(2, retries) * 1000));
+                    }
+                    
+                    if (!response.ok) {
+                        const errorData = await response.text();
+                        try {
+                            const errorJson = JSON.parse(errorData);
+                             if (response.status === 401) {
+                                outputDiv.innerHTML = '<p class="text-red-500">Authentication Error: The API key is invalid or missing. Please ensure your environment is correctly configured.</p>';
+                            } else {
+                                outputDiv.innerHTML = `<p class="text-red-500">API call failed with status: ${response.status}. Message: ${errorJson.error?.message || 'Unknown error'}</p>`;
+                            }
+                        } catch (e) {
+                             outputDiv.innerHTML = `<p class="text-red-500">An error occurred while parsing the API response. Status: ${response.status}. Raw message: ${errorData}.</p>`;
+                        }
+                        return;
+                    }
+                    
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        const text = candidate.content.parts[0].text;
+                        const sources = candidate.groundingMetadata?.groundingAttributions
+                            .map(attribution => ({ uri: attribution.web?.uri, title: attribution.web?.title }))
+                            .filter(source => source.uri && source.title);
+
+                        outputDiv.innerHTML = `<div class="prose max-w-none"></div>`;
+                        const proseDiv = outputDiv.querySelector('.prose');
+                        proseDiv.innerHTML = text.replace(/\n/g, '<br>');
+
+                        if (sources && sources.length > 0) {
+                            let sourcesHtml = '<div class="mt-4 text-xs text-gray-500">Source:<ul>';
+                            sources.forEach(source => {
+                                sourcesHtml += `<li><a href="${source.uri}" target="_blank" class="text-[#a05195] hover:underline">${source.title}</a></li>`;
+                            });
+                            sourcesHtml += '</ul></div>';
+                            proseDiv.innerHTML += sourcesHtml;
+                        }
+                    } else {
+                        outputDiv.innerHTML = "Sorry, I couldn't generate a plan. Please try again with a different request.";
+                    }
+                } catch (error) {
+                    outputDiv.innerHTML = `<p class="text-red-500">An error occurred: ${error.message}. Please check the console for details.</p>`;
+                    console.error("API Error:", error);
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
