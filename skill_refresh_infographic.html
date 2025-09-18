@@ -61,10 +61,11 @@
             <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c] mb-4">The 2025 Full-Stack Developer Refresh Guide</h1>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto">In the ever-evolving world of technology, staying current is key. This guide visualizes the essential areas modern full-stack developers should focus on to keep their skills sharp, relevant, and in-demand.</p>
         </header>
+        
+        <!-- Main Infographic Content -->
+        <main id="main-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <section class="lg:col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-6">
+            <section id="topic-1" class="lg:col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200">
                 <h2 class="text-2xl font-bold text-[#003f5c] mb-4">1. Revisit the Core Foundation</h2>
                 <p class="mb-6 text-gray-600">Even for seasoned developers, reinforcing the fundamentals is crucial. Modern web development is built on a solid understanding of HTML, CSS, and JavaScript. This chart represents their equal and interconnected importance.</p>
                 <div class="chart-container h-64 sm:h-72">
@@ -160,6 +161,56 @@
             </section>
 
         </main>
+        
+        <!-- Detailed Roadmap for Topic 1 -->
+        <section id="roadmap-1" class="hidden bg-white rounded-lg shadow-md p-6">
+            <button id="back-button" class="mb-4 py-2 px-4 bg-[#665191] text-white rounded-lg hover:bg-[#503f75] transition-colors duration-200">← Back to Main Guide</button>
+            <h2 class="text-3xl font-bold text-[#003f5c] mb-6">Detailed Roadmap: Revisit the Core Foundation</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold text-[#d45087] mb-2">HTML: Semantics & Accessibility</h3>
+                <p class="text-gray-600 mb-4">Focus on writing clean, meaningful, and accessible markup. This ensures your websites are usable by everyone and rank better in search engines.</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Master **Semantic Tags**: Use `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>` to give your content structure.</li>
+                    <li>Implement **ARIA Attributes**: Understand `aria-label`, `aria-describedby`, `aria-live` to provide context for screen readers.</li>
+                    <li>Structure **Accessible Forms**: Learn how to correctly use `<label>` tags and provide validation feedback.</li>
+                    <li>Utilize **Keyboard Navigation**: Ensure all interactive elements are reachable and usable via the keyboard.</li>
+                </ul>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold text-[#d45087] mb-2">CSS: Modern Layouts & Styling</h3>
+                <p class="text-gray-600 mb-4">Move beyond floats and table layouts. Modern CSS offers powerful tools for creating complex, responsive designs with less code.</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Become proficient in **Flexbox**: Use it for one-dimensional layouts and component alignment.</li>
+                    <li>Master **CSS Grid**: Use it for two-dimensional layouts, creating robust and complex page structures.</li>
+                    <li>Explore **Custom Properties (`--var`)**: Create reusable variables for colors, fonts, and spacing to build a scalable design system.</li>
+                    <li>Learn about **Fluid Typography and Sizing**: Use `clamp()`, `min()`, and `max()` to create truly responsive font sizes and component sizes.</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-[#d45087] mb-2">JavaScript: ES6+ Features</h3>
+                <p class="text-gray-600 mb-4">Leverage modern JavaScript syntax and asynchronous programming to write more efficient, readable, and powerful code.</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Use **Arrow Functions** and the **`this` Keyword**: Understand their concise syntax and lexical scoping.</li>
+                    <li>Employ **Destructuring** and the **Spread/Rest Operators**: Simplify object and array manipulation.</li>
+                    <li>Master **Asynchronous JavaScript**: Use `async/await` and Promises to handle API calls and other asynchronous tasks.</li>
+                    <li>Understand **Modules (`import`/`export`)**: Organize your code into reusable files and components.</li>
+                </ul>
+            </div>
+
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold text-[#665191] mb-2">Official Documentation & Further Reading</h4>
+                <p class="text-gray-600 mb-4">These resources are the gold standard for staying up-to-date with web standards.</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="text-[#d45087] hover:underline">MDN HTML Documentation</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="text-[#d45087] hover:underline">MDN CSS Documentation</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="text-[#d45087] hover:underline">MDN JavaScript Documentation</a></li>
+                </ul>
+            </div>
+        </section>
+
     </div>
 
     <script>
@@ -388,6 +439,22 @@
                 } finally {
                     loadingIndicator.classList.add('hidden');
                 }
+            });
+            
+            // New functionality for Topic 1 Roadmap
+            const mainContent = document.getElementById('main-content');
+            const topic1Section = document.getElementById('topic-1');
+            const roadmap1Section = document.getElementById('roadmap-1');
+            const backButton = document.getElementById('back-button');
+
+            topic1Section.addEventListener('click', () => {
+                mainContent.classList.add('hidden');
+                roadmap1Section.classList.remove('hidden');
+            });
+
+            backButton.addEventListener('click', () => {
+                roadmap1Section.classList.add('hidden');
+                mainContent.classList.remove('hidden');
             });
 
         });
